@@ -43,7 +43,9 @@ try {
      */
     require CONFIG_PATH . 'routes.php';
 
-    echo $application->handle()->getContent();
+    $handler = $application->handle();
+    $content = $handler->getContent();
+    echo $content;
 
 } catch (\Exception $e) {
     echo $e->getMessage() . '<br>';
