@@ -14,9 +14,9 @@ define('MODULE_PATH', APP_PATH . 'Modules' . DS);
 
 try {
     /**
-     * Include composer AutoLoader
+     * Include AutoLoaders
      */
-    require VENDOR_PATH . 'autoload.php';
+    require CONFIG_PATH . 'loaders.php';
 
     /**
      * Read the configuration
