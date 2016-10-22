@@ -1,6 +1,6 @@
 <?php
 
-namespace Rndjson\Frontend\Controllers;
+namespace RndJson\Frontend\Controllers;
 
 use Phalcon\Mvc\Controller;
 

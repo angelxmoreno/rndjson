@@ -1,6 +1,5 @@
 <?php
-
-namespace Rndjson\Frontend;
+namespace RndJson\Frontend;
 
 use Phalcon\DiInterface;
 use Phalcon\Loader;
@@ -21,8 +20,8 @@ class Module implements ModuleDefinitionInterface
         $loader = new Loader();
 
         $loader->registerNamespaces(array(
-            'Rndjson\Frontend\Controllers' => __DIR__ . '/controllers/',
-            'Rndjson\Frontend\Models' => __DIR__ . '/models/',
+            'RndJson\Frontend\Controllers' => __DIR__ . '/controllers/',
+            'RndJson\Frontend\Models' => __DIR__ . '/models/',
         ));
 
         $loader->register();
@@ -38,7 +37,7 @@ class Module implements ModuleDefinitionInterface
         /**
          * Read configuration
          */
-        $config = include APP_PATH . "/apps/frontend/config/config.php";
+        $config = include MODULE_PATH . 'Frontend' . DS . 'config' . DS . 'config.php';
 
         /**
          * Setting up the view component

@@ -1,6 +1,6 @@
 <?php
 
-namespace Rndjson\Frontend\Controllers;
+namespace RndJson\Frontend\Controllers;
 
 class IndexController extends ControllerBase
 {
