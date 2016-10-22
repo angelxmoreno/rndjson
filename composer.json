@@ -1,0 +1,26 @@
+{
+    "name": "amoreno/rndjson",
+    "type": "project",
+    "license": "ISC",
+    "authors": [
+        {
+            "name": "Angel S. Moreno",
+            "email": "angelxmoreno@gmail.com"
+        }
+    ],
+    "config": {
+        "bin-dir": "bin/"
+    },
+    "autoload": {
+        "psr-4": {
+            "RndJson\\": "app/Modules/"
+        }
+    },
+    "require": {
+        "ext-phalcon": "^3.0",
+        "phalcon/incubator": "^3.0"
+    },
+    "require-dev": {
+        "phalcon/devtools": "^3.0"
+    }
+}
