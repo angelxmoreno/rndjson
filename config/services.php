@@ -25,8 +25,8 @@ $di = new FactoryDefault();
 $di->setShared('router', function () {
     $router = new Router();
 
-    $router->setDefaultModule('frontend');
-    $router->setDefaultNamespace('Rndjson\Frontend\Controllers');
+    $router->setDefaultModule('Frontend');
+    $router->setDefaultNamespace('RndJson\Frontend\Controllers');
 
     return $router;
 });
@@ -47,9 +47,7 @@ $di->setShared('url', function () use ($config) {
 $di->setShared('view', function () use ($config) {
 
     $view = new View();
-
     $view->setViewsDir($config->application->viewsDir);
-
     $view->registerEngines(array(
         '.volt' => function ($view, $di) use ($config) {
 
@@ -64,7 +62,6 @@ $di->setShared('view', function () use ($config) {
         },
         '.phtml' => 'Phalcon\Mvc\View\Engine\Php'
     ));
-
     return $view;
 });
 
@@ -75,9 +72,7 @@ $di->setShared('db', function () use ($config) {
     $dbConfig = $config->database->toArray();
     $adapter = $dbConfig['adapter'];
     unset($dbConfig['adapter']);
-
     $class = 'Phalcon\Db\Adapter\Pdo\\' . $adapter;
-
     return new $class($dbConfig);
 });
 
@@ -115,6 +110,6 @@ $di->set('flash', function () {
 */
 $di->setShared('dispatcher', function() use ($di) {
     $dispatcher = new Phalcon\Mvc\Dispatcher();
-    $dispatcher->setDefaultNamespace('Rndjson\Frontend\Controllers');
+    $dispatcher->setDefaultNamespace('RndJson\Frontend\Controllers');
     return $dispatcher;
 });

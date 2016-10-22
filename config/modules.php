@@ -3,9 +3,9 @@
 /**
  * Register application modules
  */
-$application->registerModules(array(
-    'frontend' => array(
-        'className' => 'Rndjson\Frontend\Module',
-        'path' => __DIR__ . '/../apps/frontend/Module.php'
-    )
-));
+$application->registerModules([
+    'Frontend' => [
+        'className' => 'RndJson\Frontend\Module',
+        'path' => MODULE_PATH . 'Frontend/Module.php'
+    ]
+]);
