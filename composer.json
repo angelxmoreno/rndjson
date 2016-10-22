@@ -1,7 +1,7 @@
 {
     "name": "amoreno/rndjson",
     "type": "project",
-    "license": "ISC",
+    "license": "MIT",
     "authors": [
         {
             "name": "Angel S. Moreno",
