@@ -19,7 +19,8 @@
     "require": {
         "ext-phalcon": "^3.0",
         "phalcon/incubator": "^3.0",
-        "vlucas/phpdotenv": "^2.4"
+        "vlucas/phpdotenv": "^2.4",
+        "fzaninotto/faker": "^1.6"
     },
     "require-dev": {
         "phalcon/devtools": "^3.0"
