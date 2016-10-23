@@ -2,14 +2,14 @@
 
 $router = $di->get('router');
 
-$router->add('/', array(
+$router->add('/', [
     'controller' => 'index',
     'action' => 'index'
-))->setName('home');
+])->setName('home');
 
-$router->add('/faker', array(
+$router->add('/api/:action', [
     'controller' => 'faker',
-    'action' => 'index'
-))->setName('home');
+    'action' => 1
+]);
 
 $di->set('router', $router);

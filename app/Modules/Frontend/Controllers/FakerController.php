@@ -1,6 +1,8 @@
 <?php
 namespace RndJson\Frontend\Controllers;
 
+use RndJson\Frontend\Entities\Faker\Person as FakePerson;
+
 /**
  * Class FakerController
  *
@@ -13,13 +15,25 @@ class FakerController extends ControllerBase
      */
     public function indexAction()
     {
-        $faker = \Faker\Factory::create();
+        $person = new FakePerson\Female();
+        $this->view->_json = $person->toArray();
+    }
 
-        $response = [
-            'name' => $faker->name,
-            'age' => $faker->numberBetween(18, 40),
-            'address' => $faker->address
-        ];
-        $this->view->_json = $response;
+    /**
+     * Renders a fake male object
+     */
+    public function maleAction()
+    {
+        $person = new FakePerson\Male();
+        $this->view->_json = $person->toArray();
+    }
+
+    /**
+     * Render a fake female object
+     */
+    public function femaleAction()
+    {
+        $person = new FakePerson\Female();
+        $this->view->_json = $person->toArray();
     }
 }

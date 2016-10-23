@@ -1,10 +1,10 @@
 <?php
 namespace RndJson\Frontend\Controllers;
 
-use Phalcon\Mvc\Controller;
-use Phalcon\Mvc\View;
-use Phalcon\Mvc\Dispatcher;
 use Phalcon\Http\ResponseInterface;
+use Phalcon\Mvc\Controller;
+use Phalcon\Mvc\Dispatcher;
+use Phalcon\Mvc\View;
 
 /**
  * Class ControllerBase
@@ -13,6 +13,18 @@ use Phalcon\Http\ResponseInterface;
  */
 abstract class ControllerBase extends Controller
 {
+
+    /**
+     * Initializes the controllers
+     *
+     * Is executed first, before any action is executed on a controller.
+     * The use of the __construct() method is not recommended.
+     *
+     */
+    public function initialize()
+    {
+    }
+
     /**
      * @param Dispatcher $dispatcher
      *
