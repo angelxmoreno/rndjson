@@ -2,6 +2,8 @@
 namespace RndJson\Frontend\Entities\Fake;
 
 use Faker\Factory as FakerFactory;
+use function \nspl\rnd\weightedChoice;
+use function \nspl\a\pairs;
 
 /**
  * Class Fake
@@ -22,6 +24,18 @@ abstract class FakeBase
     {
         $this->faker = FakerFactory::create();
         $this->assignProperties();
+    }
+
+    /**
+     * Helper method for making decisions based off of choices
+     *
+     * @param array $choices
+     *
+     * @return string
+     */
+    public static function decide(array $choices)
+    {
+        return weightedChoice(pairs($choices));
     }
 
     /**
