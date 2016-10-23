@@ -20,6 +20,20 @@ class FakeController extends ControllerBase
     }
 
     /**
+     * Renders a fake person object
+     */
+    public function personAction()
+    {
+        $gender = Fake\Person\Female::decide([
+            'male' => .40,
+            'female' => .50
+        ]);
+
+        $action = "{$gender}Action";
+        $this->$action();
+    }
+
+    /**
      * Renders a fake male object
      */
     public function maleAction()
