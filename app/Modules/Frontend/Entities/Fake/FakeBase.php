@@ -25,6 +25,13 @@ abstract class FakeBase
     }
 
     /**
+     * Converts the object into an Array
+     *
+     * @return array
+     */
+    abstract public function toArray();
+
+    /**
      * Creates the properties for the Fake Object
      *
      * @return mixed

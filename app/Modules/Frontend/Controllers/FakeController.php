@@ -1,7 +1,7 @@
 <?php
 namespace RndJson\Frontend\Controllers;
 
-use RndJson\Frontend\Entities\Fake\Person as FakePerson;
+use RndJson\Frontend\Entities\Fake;
 
 /**
  * Class FakeController
@@ -15,8 +15,8 @@ class FakeController extends ControllerBase
      */
     public function indexAction()
     {
-        $person = new FakePerson\Female();
-        $this->view->_json = $person->toArray();
+        $fakeObj = new Fake\Person\Female();
+        $this->view->_json = $fakeObj->toArray();
     }
 
     /**
@@ -24,8 +24,8 @@ class FakeController extends ControllerBase
      */
     public function maleAction()
     {
-        $person = new FakePerson\Male();
-        $this->view->_json = $person->toArray();
+        $fakeObj = new Fake\Person\Male();
+        $this->view->_json = $fakeObj->toArray();
     }
 
     /**
@@ -33,7 +33,16 @@ class FakeController extends ControllerBase
      */
     public function femaleAction()
     {
-        $person = new FakePerson\Female();
-        $this->view->_json = $person->toArray();
+        $fakeObj = new Fake\Person\Female();
+        $this->view->_json = $fakeObj->toArray();
+    }
+
+    /**
+     * Render a fake address object
+     */
+    public function addressAction()
+    {
+        $fakeObj = new Fake\Address();
+        $this->view->_json = $fakeObj->toArray();
     }
 }
