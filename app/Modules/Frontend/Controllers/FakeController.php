@@ -1,14 +1,14 @@
 <?php
 namespace RndJson\Frontend\Controllers;
 
-use RndJson\Frontend\Entities\Faker\Person as FakePerson;
+use RndJson\Frontend\Entities\Fake\Person as FakePerson;
 
 /**
- * Class FakerController
+ * Class FakeController
  *
  * @package RndJson\Frontend\Controllers
  */
-class FakerController extends ControllerBase
+class FakeController extends ControllerBase
 {
     /**
      * Index Action

@@ -1,14 +1,14 @@
 <?php
-namespace RndJson\Frontend\Entities\Faker\Person;
+namespace RndJson\Frontend\Entities\Fake\Person;
 
-use RndJson\Frontend\Entities\Faker\FakerBase;
+use RndJson\Frontend\Entities\Fake\FakeBase;
 
 /**
  * Class Person
  *
- * @package RndJson\Frontend\Entities\Faker\Person
+ * @package RndJson\Frontend\Entities\Fake\Person
  */
-abstract class PersonBase extends FakerBase
+abstract class PersonBase extends FakeBase
 {
     /**
      * @var string

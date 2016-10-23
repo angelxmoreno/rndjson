@@ -1,14 +1,14 @@
 <?php
-namespace RndJson\Frontend\Entities\Faker;
+namespace RndJson\Frontend\Entities\Fake;
 
 use Faker\Factory as FakerFactory;
 
 /**
- * Class Faker
+ * Class Fake
  *
- * @package RndJson\Frontend\Entities\Faker
+ * @package RndJson\Frontend\Entities\Fake
  */
-abstract class FakerBase
+abstract class FakeBase
 {
     /**
      * @var FakerGenerator
@@ -16,7 +16,7 @@ abstract class FakerBase
     protected $faker;
 
     /**
-     * FakerBase constructor
+     * FakeBase constructor
      */
     public function __construct()
     {

@@ -8,7 +8,7 @@ $router->add('/', [
 ])->setName('home');
 
 $router->add('/api/:action', [
-    'controller' => 'faker',
+    'controller' => 'fake',
     'action' => 1
 ]);
 

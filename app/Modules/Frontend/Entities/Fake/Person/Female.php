@@ -1,10 +1,10 @@
 <?php
-namespace RndJson\Frontend\Entities\Faker\Person;
+namespace RndJson\Frontend\Entities\Fake\Person;
 
 /**
  * Class Female
  *
- * @package RndJson\Frontend\Entities\Faker\Person
+ * @package RndJson\Frontend\Entities\Fake\Person
  */
 class Female extends PersonBase
 {
