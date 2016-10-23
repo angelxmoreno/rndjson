@@ -39,12 +39,16 @@ $di->setShared('logger', function () use ($di) {
 /**
  * Registering a router
  */
-$di->setShared('router', function () {
-    $router = new Router();
+$di->set('router', function () {
+    $router = new Router(false);
 
     $router->setDefaultModule('Frontend');
     $router->setDefaultNamespace('RndJson\Frontend\Controllers');
-
+    $router->removeExtraSlashes(true);
+    $router->notFound([
+        'controller' => 'error',
+        'action' => 'route404',
+    ]);
     return $router;
 });
 
