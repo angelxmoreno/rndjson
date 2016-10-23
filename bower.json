@@ -1,0 +1,21 @@
+{
+  "name": "rndjson",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Angel S. Moreno <angelxmoreno@gmail.com> (https://angelxmoreno.github.io/)"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/angelxmoreno/rndjson",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1"
+  }
+}

@@ -26,5 +26,11 @@
     },
     "require-dev": {
         "phalcon/devtools": "^3.0"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "npm install",
+            "node_modules/.bin/bower install"
+        ]
     }
 }

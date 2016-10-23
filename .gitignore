@@ -3,3 +3,4 @@ vendor/
 bin
 logs/*
 !logs/.keep
+node_modules/
