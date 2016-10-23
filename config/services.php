@@ -4,7 +4,7 @@
  *
  * @var \Phalcon\Config $config
  */
-
+use Phalcon\Mvc\Dispatcher;
 use Phalcon\Mvc\Router;
 use Phalcon\Mvc\Url as UrlResolver;
 use Phalcon\Di\FactoryDefault;
@@ -18,6 +18,23 @@ use Phalcon\Flash\Direct as Flash;
  * The FactoryDefault Dependency Injector automatically registers the right services to provide a full stack framework
  */
 $di = new FactoryDefault();
+
+/**
+ * Register config data to the di
+ */
+
+$di->set('config', $config);
+
+/**
+ * Registering a logger
+ */
+$di->setShared('logger', function () use ($di) {
+    $config = $di->get('config')->logger;
+    $adapterClass = '\\Phalcon\\Logger\\Adapter\\' . $config->adapter;
+    $logger = new $adapterClass($config->options);
+
+    return $logger;
+});
 
 /**
  * Registering a router
@@ -98,18 +115,18 @@ $di->setShared('session', function () {
  */
 $di->set('flash', function () {
     return new Flash(array(
-        'error'   => 'alert alert-danger',
+        'error' => 'alert alert-danger',
         'success' => 'alert alert-success',
-        'notice'  => 'alert alert-info',
+        'notice' => 'alert alert-info',
         'warning' => 'alert alert-warning'
     ));
 });
 
 /**
-* Set the default namespace for dispatcher
-*/
-$di->setShared('dispatcher', function() use ($di) {
-    $dispatcher = new Phalcon\Mvc\Dispatcher();
+ * Set the default namespace for dispatcher
+ */
+$di->setShared('dispatcher', function () use ($di) {
+    $dispatcher = new Dispatcher();
     $dispatcher->setDefaultNamespace('RndJson\Frontend\Controllers');
     return $dispatcher;
 });

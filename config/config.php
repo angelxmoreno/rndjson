@@ -10,6 +10,10 @@ $config_array = array(
         'dbname' => 'rndjson',
         'charset' => 'utf8',
     ),
+    'logger' => [
+        'adapter' => 'File',
+        'options' => LOGS_PATH . 'le-logs.log'
+    ],
     'application' => array(
         'controllersDir' => __DIR__ . '/../controllers/',
         'modelsDir' => __DIR__ . '/../models/',

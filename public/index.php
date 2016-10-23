@@ -3,14 +3,15 @@
 use Phalcon\Mvc\Application;
 
 error_reporting(E_ALL);
+date_default_timezone_set('UTC');
 
 define('DS', DIRECTORY_SEPARATOR);
 define('ROOT_PATH', realpath('..') . DS);
 define('APP_PATH', ROOT_PATH . 'app' . DS);
 define('CONFIG_PATH', ROOT_PATH . 'config' . DS);
 define('VENDOR_PATH', ROOT_PATH . 'vendor' . DS);
+define('LOGS_PATH', ROOT_PATH . 'logs' . DS);
 define('MODULE_PATH', APP_PATH . 'Modules' . DS);
-
 
 try {
     /**
@@ -50,4 +51,5 @@ try {
 } catch (\Exception $e) {
     echo $e->getMessage() . '<br>';
     echo '<pre>' . $e->getTraceAsString() . '</pre>';
+    $di->get('logger')->critical($e->getMessage());
 }

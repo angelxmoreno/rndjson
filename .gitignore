@@ -1,3 +1,5 @@
 vendor/
 .env
 bin
+logs/*
+!logs/.keep
